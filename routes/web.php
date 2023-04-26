@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AddRoomController;
+use App\Http\Controllers\APICovidController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +15,14 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/add', [AddRoomController::class, 'index']);
+Route::post('/add', [AddRoomController::class, 'store'])->name('add.store');
+
+
+
+Route::get('/signup',[RegisterController::class,'showRegistrationForm']);
+Route::post('/signup',[RegisterController::class,'RegisterAction']);
+
 
 Route::get('/', function () {
     return view('welcome');
