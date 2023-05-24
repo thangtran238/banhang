@@ -8,20 +8,28 @@ use Illuminate\Http\Request;
 
 class AddRoomController extends Controller
 {
-    public function index() {
+    public function show()
+    {
+        return view('add');
+    }
+
+
+    public function index()
+    {
         $rooms = Room::all();
         return view('add', compact('rooms'));
     }
-    public function store(AddRequest $request)
-{
-    $room = Room::create([
-        'room_name' => $request->input('roomname'),
-        'description' => $request->input('des'),
-        'price' => $request->input('price'),
-        'image' => $request->input('img')
-    ]);
-    $rooms = Room::all();
-    return view('add', compact('rooms'));
-}
 
+
+    public function store(Request $request)
+    {
+        $room = Room::create([
+            'room_name' => $request->input('roomname'),
+            'description' => $request->input('des'),
+            'price' => $request->input('price'),
+            'image' => $request->input('img')
+        ]);
+        $rooms = Room::all();
+        return view('add', compact('rooms'));
+    }
 }
