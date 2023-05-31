@@ -15,17 +15,17 @@
         justify-content: space-between;
     }
 </style>
-<body> 
-  
+<body>
+
 
     <form action="" method="post">
-    @csrf 
+    @csrf
      <div class="form-group">
-       
+
         <input type="text" class="form-control" placeholder="Số a"  name='soA' >
     </div>
     <div class="form-group">
-       
+
         <input type="text" class="form-control" placeholder="Số b"  name='soB' >
     </div>
     <button type="submit" class="btn btn-primary">Tính</button>
@@ -34,8 +34,8 @@
         <input type="number" class="form-control" placeholder="Kết quả" disabled="" value ="<?php if (isset($sum)) echo $sum; else echo $sum;?>">
    </div>
     </form>
-    
-   
+
+
 
 
 

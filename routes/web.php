@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AddRoomController;
 use App\Http\Controllers\APICovidController;
+use App\Http\Controllers\MasterController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,8 +28,13 @@ Route::post('/signup',[RegisterController::class,'RegisterAction']);
 Route::get('/', function () {
     return view('welcome');
 });
+
+
 Route::get('/tong',[App\Http\Controllers\CongController::class,'tinhtong']);
 Route::post('/tong',[App\Http\Controllers\CongController::class,'tinhtong']);
 
 Route::get('/area',[App\Http\Controllers\AreaofshapeController::class,'computeArea']);
 Route::post('/area',[App\Http\Controllers\AreaofshapeController::class,'computeArea']);
+
+
+Route::get('/master', [MasterController::class,'getDetail']);

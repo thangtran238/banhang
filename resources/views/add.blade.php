@@ -14,7 +14,7 @@
         }
 
         .room img {
-            flex-basis: calc(25% - 10px);
+            flex-basis: calc(30% - 10px);
             width: 200px;
         }
     </style>
@@ -37,10 +37,10 @@
                 <input type="text" name="des" placeholder="Tên phòng">
             </label>
             <label for=""> Giá
-                <input type="text" name=" price" placeholder="Tên phòng">
+                <input type="text" name="price" placeholder="Tên phòng">
             </label>
             <label for=""> Hình ảnh
-                <input type="text" name=" img" placeholder="Link ảnh">
+                <input type="text" name="img" placeholder="Link ảnh">
             </label>
         </div>
     </form>
