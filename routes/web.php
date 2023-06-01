@@ -37,4 +37,8 @@ Route::get('/area',[App\Http\Controllers\AreaofshapeController::class,'computeAr
 Route::post('/area',[App\Http\Controllers\AreaofshapeController::class,'computeArea']);
 
 
-Route::get('/master', [MasterController::class,'getDetail']);
+Route::get('/master', [MasterController::class,'getIndex']);
+
+Route::get('/detail/{id}', [MasterController::class,'getDetail']);
+
+Route::get('/type/{id}',[MasterController::class,'getLoaiSp']);

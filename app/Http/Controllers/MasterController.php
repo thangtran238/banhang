@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Comment;
 use App\Models\product;
 use App\Models\Slide;
+use App\Models\Type_Product;
 use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,15 @@ class MasterController extends Controller
         $comments = Comment::where('id_product', $request->id)->get();
         return view('page.chitiet_sanpham', compact('sanpham', 'splienquan', 'comments'));
     }
+    public function getLoaiSp($type) {
+        $type_product = Type_Product::all();
 
+        $sp_theoloai = Product::where('id_type',$type)->get();
+
+        $sp_khac = Product::where('id_type', '<>',$type)->paginate(3);
+
+        return view('page.loai_sanpham', compact('sp_theoloai','type_product','sp_khac'));
+    }
 
     public function show()
     {

@@ -11,7 +11,7 @@ class product extends Model
     protected $table="products";
 
     public function product_type(){
-        return $this->belongsTo('App\TypeProduct');
+        return $this->belongsTo('App\Type_Product');
     }
     public function bill_detail(){
         return $this->hasMany('App\BillDetail');
@@ -20,6 +20,6 @@ class product extends Model
         return $this->hasMany('App\Comment');
     }
     public function wishlist(){
-        return $this->belongsTo(Wishlist::class);
+        return $this->belongsTo('App\Product');
     }
 }
