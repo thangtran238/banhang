@@ -5,6 +5,7 @@ use App\Http\Controllers\APICovidController;
 use App\Http\Controllers\MasterController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\postAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,8 +38,20 @@ Route::get('/area',[App\Http\Controllers\AreaofshapeController::class,'computeAr
 Route::post('/area',[App\Http\Controllers\AreaofshapeController::class,'computeArea']);
 
 
-Route::get('/master', [MasterController::class,'getIndex']);
+Route::get('/homepage', [MasterController::class,'getIndex']);
 
 Route::get('/detail/{id}', [MasterController::class,'getDetail']);
 
 Route::get('/type/{id}',[MasterController::class,'getLoaiSp']);
+
+Route::get('/admin', [MasterController::class, 'getIndexAdmin']);
+
+Route::get('/admin-add-form', [MasterController::class, 'getAdminAdd'])->name('add-product');
+
+Route::post('/admin-add-form', [MasterController::class, 'postAdminAdd']);
+
+Route::get('admin-edit-form/{id}', [MasterController::class, 'getAdminEdit']);
+
+Route::post('admin-edit-form/{id}', [MasterController::class, 'postAdminEdit']);
+
+Route::post('/admin-delete/{id}', [MasterController::class, 'postAdminDelete']);
